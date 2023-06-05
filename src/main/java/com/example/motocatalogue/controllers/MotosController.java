@@ -27,11 +27,14 @@ public class MotosController {
     List<Brand> brands = new ArrayList<>();
     brands.add(new Brand("01", "Honda"));
     brands.add(new Brand("02", "Kawasaki"));
+    brands.add(new Brand("03", "Yamaha"));
+    brands.add(new Brand("04", "Suzuki"));
 
     // バイク
     List<Motorcycle> motos = new ArrayList<>();
     motos.add(new Motorcycle(1, "GB350", 800, 1, "空冷", 500000, "いい音！", new Brand("01", "Honda"), 1, null, null));
     motos.add(new Motorcycle(2, "Ninja", 800, 2, "水冷", 1000000, "かっこいい！", new Brand("02", "Kawasaki"), 1, null, null));
+    motos.add(new Motorcycle(3, "Z900RS", 820, 4, "水冷", 1380000, "音めっちゃかっこいい！", new Brand("02", "Kawasaki"), 1, null, null));
 
     model.addAttribute("brands", brands);
     model.addAttribute("motos", motos);
