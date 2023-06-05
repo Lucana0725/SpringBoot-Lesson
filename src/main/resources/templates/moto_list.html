@@ -78,13 +78,22 @@
             </tr>
           </thead>
           <tbody>
-            <tr th:each="moto : ${motos}">
+            <!-- <tr th:each="moto : ${motos}">
               <th scope="row" th:text="${moto.motoNo}"></th>
               <td th:text="${moto.brand.brandName}"></td>
               <td th:text="${moto.motoName}"></td>
               <td th:text="${moto.cooling} + ${moto.cylinder}"></td>
               <td th:text="${moto.price}"></td>
               <td th:text="${moto.comment}">かっこいい！</td>
+            </tr> -->
+            <!-- ${moto}をオブジェクトとして扱い、th記述量を減らす書き方 -->
+            <tr th:each="moto : ${motos}" th:object="${moto}">
+              <th scope="row" th:text="*{motoNo}"></th>
+              <td th:text="*{brand.brandName}"></td>
+              <td th:text="*{motoName}"></td>
+              <td th:text="*{cooling} + *{cylinder}"></td>
+              <td th:text="*{price}"></td>
+              <td th:text="*{comment}">かっこいい！</td>
             </tr>
           </tbody>
         </table>
