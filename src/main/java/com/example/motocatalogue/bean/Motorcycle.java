@@ -2,12 +2,20 @@ package com.example.motocatalogue.bean;
 
 import java.time.LocalDateTime;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/*
+ * バイク詳細
+ */
 
 @Data  // Lombokの機能で、コンパイル時に自動的にアクセスメソッド(set, get)を作ってくれて、ボイラープレートコードを省略できるようになる。
+@AllArgsConstructor  // Lombokの機能。すべてのフィールドを引数に持つコンストラクタを自動生成してくれる。(今回だと、motoNo～updateDateまですべてを対象。)
+@NoArgsConstructor  // Lombokの機能。引数のないデフォルトのコンストラクタを作成してくれる。
 public class Motorcycle {
   // バイクNo.
-  private String motoNo;
+  private Integer motoNo;
 
   //バイク名
   private String motoName;
@@ -19,13 +27,13 @@ public class Motorcycle {
   private Integer cylinder;
 
   // 冷却
-  private Integer cooling;
+  private String cooling;
 
   // 価格
   private Integer price;
 
   // コメント
-  private Integer comment;
+  private String comment;
 
   // ブランド(ブランドID)
   // private String brandId;
@@ -39,6 +47,14 @@ public class Motorcycle {
 
   // 更新日時
   private LocalDateTime updateDate;
+
+
+  // Lombokを使わない場合、コンストラクタは以下のように普通に定義することになる。
+  // Motocycle() {
+
+  // }
+
+
 }
 
 
