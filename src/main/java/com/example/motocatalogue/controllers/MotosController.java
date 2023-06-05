@@ -22,7 +22,7 @@ public class MotosController {
   }
 
   @GetMapping("/motos")
-  public String motos() {
+  public String motos(Model model) {
     // ブランド
     List<Brand> brands = new ArrayList<>();
     brands.add(new Brand("01", "Honda"));
@@ -32,6 +32,9 @@ public class MotosController {
     List<Motorcycle> motos = new ArrayList<>();
     motos.add(new Motorcycle(1, "GB350", 800, 1, "空冷", 500000, "いい音！", new Brand("01", "Honda"), 1, null, null));
     motos.add(new Motorcycle(2, "Ninja", 800, 2, "水冷", 1000000, "かっこいい！", new Brand("02", "Kawasaki"), 1, null, null));
+
+    model.addAttribute("brands", brands);
+    model.addAttribute("motos", motos);
 
     return "moto_list";
   }
