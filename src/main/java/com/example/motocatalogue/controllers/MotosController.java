@@ -12,8 +12,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.motocatalogue.bean.Brand;
 import com.example.motocatalogue.bean.Motorcycle;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
+@Slf4j
 public class MotosController {
+
+  // ログ部品が使えるようになる(伝統的な書き方)
+  // private static final Logger log = LoggerFactory.getLogger(MotosController.class);
   
   @RequestMapping("/hello")
   public String hello(@RequestParam String name, Model model) {
@@ -38,6 +44,8 @@ public class MotosController {
 
     model.addAttribute("brands", brands);
     model.addAttribute("motos", motos);
+
+    log.debug("motos: {}", motos);  // デバッグログ出力をする。@slf4jより。
 
     return "moto_list";
   }
