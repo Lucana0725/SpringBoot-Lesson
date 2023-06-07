@@ -45,7 +45,7 @@ public class MotosController {
     model.addAttribute("brands", brands);
     model.addAttribute("motos", motos);
 
-    log.info("motos: {}", motos);  // デバッグログ出力をする。@slf4jより。
+    log.debug("motos: {}", motos);  // デバッグログ出力をする。@slf4jより。
 
     return "moto_list";
   }
