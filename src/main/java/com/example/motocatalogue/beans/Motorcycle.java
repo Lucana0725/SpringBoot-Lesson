@@ -1,4 +1,4 @@
-package com.example.motocatalogue.bean;
+package com.example.motocatalogue.beans;
 
 import java.time.LocalDateTime;
 
